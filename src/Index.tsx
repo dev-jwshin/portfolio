@@ -92,7 +92,7 @@ function Index() {
                         <PlayArrow style={{ fontSize: 50 }} className="text-white" />
                       </div>
                       <div className="grid grid-cols-2">
-                        <img src="./service/codle.png" alt="Freefall" className="w-full border-r border-b border-gray-700" />
+                        <img src="./service/codle.png" alt="Freefall" className="w-full border-r border-b border-gray-500" />
                         <img src="./service/aucshow.png" alt="Freefall" className="w-full" />
                         <img src="./service/aidt.png" alt="Freefall" className="w-full" />
                         <div className="w-[138px] h-[138px] bg-gray-500 flex justify-center items-center">
