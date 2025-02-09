@@ -1,4 +1,4 @@
-import { Close, PlayArrow, SkipNext, SkipPrevious } from "@mui/icons-material"
+import { Close, PlayArrow, PlusOne, SkipNext, SkipPrevious } from "@mui/icons-material"
 
 function Index() {
   return (
@@ -71,7 +71,14 @@ function Index() {
                       <div className="absolute inset-0 opacity-0 bg-black/60 group-hover:opacity-100 transition-all duration-300 flex justify-center items-center">
                         <PlayArrow style={{ fontSize: 50 }} className="text-white" />
                       </div>
-                      <img src="./skills.png" alt="Freefall" className="w-full" />
+                      <div className="grid grid-cols-2">
+                        <img src="./language/golang.png" alt="Freefall" className="w-full" />
+                        <img src="./language/ruby.png" alt="Freefall" className="w-full" />
+                        <img src="./language/js.png" alt="Freefall" className="w-full" />
+                        <div className="w-[138px] h-[138px] bg-gray-500 flex justify-center items-center">
+                          + 20
+                        </div>
+                      </div>
                     </div>
                     <div className="mt-2">
                       <p>스킬에 대해</p>
@@ -84,11 +91,18 @@ function Index() {
                       <div className="absolute inset-0 opacity-0 bg-black/60 group-hover:opacity-100 transition-all duration-300 flex justify-center items-center">
                         <PlayArrow style={{ fontSize: 50 }} className="text-white" />
                       </div>
-                      <img src="./me.jpg" alt="Freefall" className="w-full" />
+                      <div className="grid grid-cols-2">
+                        <img src="./service/codle.png" alt="Freefall" className="w-full border-r border-b border-gray-700" />
+                        <img src="./service/aucshow.png" alt="Freefall" className="w-full" />
+                        <img src="./service/aidt.png" alt="Freefall" className="w-full" />
+                        <div className="w-[138px] h-[138px] bg-gray-500 flex justify-center items-center">
+                          + 9
+                        </div>
+                      </div>
                     </div>
                     <div className="mt-2">
                       <p>포트폴리오</p>
-                      <p className="text-sm text-gray-400">9개의 포트폴리오 수록</p>
+                      <p className="text-sm text-gray-400">29개의 서비스 수록</p>
                     </div>
                   </div>
                 </div>
