@@ -1,1 +1,7 @@
-@import "tailwindcss"
+@import "tailwindcss";
+@import "react-loading-skeleton/dist/skeleton.css";
+
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+}
