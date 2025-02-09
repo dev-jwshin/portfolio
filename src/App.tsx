@@ -1,4 +1,4 @@
-import { CancelOutlined, Close, EditOutlined, InfoOutlined, MenuOutlined, PlayArrow, SkipNext, SkipPrevious } from "@mui/icons-material"
+import { Close, SkipNext, SkipPrevious } from "@mui/icons-material"
 
 function App() {
   return (
