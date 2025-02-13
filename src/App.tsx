@@ -1,14 +1,16 @@
 // src/App.js
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Index from './Index';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Index />} />
-      </Routes>
-    </Router>
+    <div>
+      ang
+    </div>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Index />} />
+    //   </Routes>
+    // </Router>
   );
 }
 
