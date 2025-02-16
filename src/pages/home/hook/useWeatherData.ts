@@ -35,7 +35,13 @@ interface WeatherResponse {
 interface WeatherDataItem {
   time: string;
   temperature: string;
+  precipitation: string;
   icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string; };
+}
+
+interface WeatherInfo {
+  icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string; };
+  precipitation: string;
 }
 
 export const useWeatherData = (latitude: number | null, longitude: number | null) => {
@@ -43,20 +49,38 @@ export const useWeatherData = (latitude: number | null, longitude: number | null
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const getWeatherIcon = (precipitation: string): OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string; } => {
+  const getWeatherInfo = (precipitation: string): WeatherInfo => {
     switch (precipitation) {
       case '0':
-        return WbSunnyOutlinedIcon;
+        return {
+          icon: WbSunnyOutlinedIcon,
+          precipitation: '청명함',
+        }
       case '1':
-        return WaterDropSharpIcon;
+        return {
+          icon: WaterDropSharpIcon,
+          precipitation: '비',
+        }
       case '2':
-        return WaterDropSharpIcon;
+        return {
+          icon: WaterDropSharpIcon,
+          precipitation: '비',
+        }
       case '3':
-        return AcUnitOutlinedIcon;
+        return {
+          icon: AcUnitOutlinedIcon,
+          precipitation: '눈',
+        }
       case '4':
-        return ThunderstormOutlinedIcon;
+        return {
+          icon: ThunderstormOutlinedIcon,
+          precipitation: '천둥번개',
+        }
       default:
-        return WbSunnyOutlinedIcon;
+        return {
+          icon: WbSunnyOutlinedIcon,
+          precipitation: '청명함',
+        }
     }
   };
 
@@ -81,7 +105,9 @@ export const useWeatherData = (latitude: number | null, longitude: number | null
       if (item.category === 'T1H') {
         currentData.temperature = item.fcstValue;
       } else if (item.category === 'PTY') {
-        currentData.icon = getWeatherIcon(item.fcstValue);
+        const weatherInfo = getWeatherInfo(item.fcstValue);
+        currentData.precipitation = weatherInfo.precipitation;
+        currentData.icon = weatherInfo.icon;
       }
     });
 

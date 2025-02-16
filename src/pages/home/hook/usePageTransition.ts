@@ -21,5 +21,7 @@ export const usePageTransition = () => {
     rounded: '0px',
   });
 
-  return { appBox, setAppBox, pageBox, setPageBox };
+  const [loading, setLoading] = useState(true);
+
+  return { appBox, setAppBox, pageBox, setPageBox, loading, setLoading };
 };

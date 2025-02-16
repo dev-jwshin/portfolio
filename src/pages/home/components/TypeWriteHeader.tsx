@@ -1,8 +1,8 @@
 import { TypeAnimation } from 'react-type-animation';
 
-export const TypewriterHeader = () => {
+export const TypewriterHeader = ({ className }: { className?: string }) => {
   return (
-    <div className='col-span-3 md:col-span-4 lg:col-span-6 flex flex-col gap-1 lg:gap-2'>
+    <div className={`${className}`}>
       <p className='text-white text-xl md:text-4xl font-light'>Hello!</p>
       <div className='text-white text-2xl md:text-5xl font-light'>
         <span className='pr-1'>I'm </span>

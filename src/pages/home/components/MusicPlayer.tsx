@@ -11,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { musics } from '../home.datas';
 
-export const MusicPlayer = () => {
+export const MusicPlayer = ({ className }: { className?: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentMusicIndex, setCurrentMusicIndex] = useState(0);
@@ -132,7 +132,7 @@ export const MusicPlayer = () => {
   };
 
   return (
-    <div className='col-span-3 md:col-span-4 lg:col-span-3 hidden md:flex flex-col justify-center items-center h-[240px] rounded-[20px] overflow-hidden text-white'>
+    <div className={`${className}`}>
       <div className='flex justify-center items-center gap-5 w-full h-full bg-amber-950 p-6'>
         <div className='hidden md:block min-w-[192px] h-[192px]'>
           <img 

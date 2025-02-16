@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/aspect-ratio";
 
+@theme {
+  --breakpoint-lg: 1280px;
+}
+
 * {
   user-select: none;
   -webkit-user-drag: none;

@@ -17,6 +17,9 @@ export type PageBox = {
   rounded: string;
 }
 
+export type WrapBox = {
+  background: string;
+}
 export type AppItem = {
   name: string;
   image: string;

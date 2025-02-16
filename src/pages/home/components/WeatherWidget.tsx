@@ -3,7 +3,7 @@ import { useWeatherData } from '../hook/useWeatherData';
 import { CircularProgress } from '@mui/material';
 import { useEffect, useState } from 'react';
 
-export const WeatherWidget = () => {
+export const WeatherWidget = ({ className }: { className?: string }) => {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
 
@@ -37,7 +37,7 @@ export const WeatherWidget = () => {
   };
 
   return (
-    <div className='col-span-3 md:col-span-4 lg:col-span-3 hidden lg:flex'>
+    <div className={`${className}`}>
       {/* @ts-ignore */}
       <Ripples className='flex flex-col justify-center items-center w-full h-[240px] rounded-[20px] bg-gradient-to-b from-black to-blue-950 text-white cursor-pointer'
         onClick={handleGetLocation}>  {/* onClick을 Ripples 컴포넌트로 이동 */}
@@ -61,11 +61,13 @@ const WeatherWidgetContent = ({ latitude, longitude }: { latitude: number | null
   }
 
   if (error){
-    <div className='flex flex-col items-center w-full gap-6 px-8'>
-    <div className='flex justify-center items-center w-full h-full'>
-        <span className='text-sm text-gray-400'>이런, 날씨 정보를 불러오는데 실패했어요.</span>
+    return (
+      <div className='flex flex-col items-center w-full gap-6 px-8'>
+        <div className='flex justify-center items-center w-full h-full'>
+          <span className='text-sm text-white'>이런, 날씨 정보를 불러오는데 실패했어요.</span>
+        </div>
       </div>
-    </div>
+    )
   }
 
   const maxTemp = Math.max(...weatherData.map(data => Number(data.temperature)));
@@ -73,13 +75,18 @@ const WeatherWidgetContent = ({ latitude, longitude }: { latitude: number | null
 
   return (
     <div className='flex flex-col items-center w-full gap-6 px-8'>
-      <div className='flex justify-between items-center w-full'>
+      <div className='flex justify-between items-start w-full'>
         <div className='flex flex-col tracking-wider'>
-          <span className='text-lg'>서울</span>
-          <span className='text-5xl font-light'>{weatherData[0].temperature}°</span>
+          <div className='flex justify-between items-center'>
+            <span className='text-lg min-w-[55px]'>서울</span>
+          </div>
+          <div className='flex justify-between items-center tracking-wider w-full mt-2'>
+            <span className='text-5xl font-light'>{weatherData[0].temperature}°</span>
+          </div>
         </div>
         <div className='flex flex-col items-end tracking-wider'>
-          <span className='mt-2'>최고 {maxTemp}°</span>
+          <span>{weatherData[0].precipitation}</span>
+          <span>최고 {maxTemp}°</span>
           <span>최저 {minTemp}°</span>
         </div>
       </div>

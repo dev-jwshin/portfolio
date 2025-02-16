@@ -1,20 +1,25 @@
 import { MusicItem } from "./home.types";
 
 export const apps = [
+  // {
+  //   name: '인적 사항',
+  //   image: './app/info.webp',
+  //   page: 'info',
+  // },
+  // {
+  //   name: '학력',
+  //   image: './app/education.webp',
+  //   page: 'education',
+  // },
+  // {
+  //   name: '경력',
+  //   image: './app/work-history.webp',
+  //   page: 'work-history',
+  // },
   {
-    name: '인적 사항',
-    image: './app/info.webp',
-    page: 'info',
-  },
-  {
-    name: '학력',
-    image: './app/education.webp',
-    page: 'education',
-  },
-  {
-    name: '경력',
-    image: './app/work-history.webp',
-    page: 'work-history',
+    name: '이력서',
+    image: './app/resume.webp',
+    page: 'resume',
   },
   {
     name: '자기소개',

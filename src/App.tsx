@@ -44,12 +44,20 @@ const MainContent = ({
 }) => {
   return (
     <div id='content' className="w-full h-full">
-      <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full gap-10'>
-        <TypewriterHeader />
-        <WeatherWidget />
-        <MusicPlayer />
+      <div className='grid grid-cols-8 w-full gap-10'>
+        <TypewriterHeader className='col-span-8 flex flex-col gap-1 lg:gap-2' />
+        <WeatherWidget className='col-span-4 flex' />
+        <MusicPlayer className='col-span-4 flex flex-col justify-center items-center h-[240px] rounded-[20px] overflow-hidden text-white' />
         <AppGrid apps={apps} pageHandler={pageHandler} />
       </div>
+    </div>
+  );
+};
+
+const Loading = ({ className }: { className?: string }) => {
+  return (
+    <div className={className}>
+      <img src='./loading.jpg' alt='loading' className='w-98' />
     </div>
   );
 };
@@ -59,7 +67,7 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
     <div 
       id='sub-page'
       style={{
-        position: 'fixed',
+        position: 'absolute',
         backgroundColor: '#222',
         top: pageBox.top,
         left: pageBox.left,
@@ -81,7 +89,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const path = location.pathname;
-  const { appBox, setAppBox, pageBox, setPageBox } = usePageTransition();
+  const { appBox, setAppBox, pageBox, setPageBox, loading, setLoading } = usePageTransition();
 
   const pageHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
@@ -89,8 +97,8 @@ function App() {
     const page = target.getAttribute('data-page');
 
     const newAppBox = {
-      top: rect.top,
-      left: rect.left,
+      top: target.offsetTop,
+      left: target.offsetLeft,
       width: rect.width,
       height: rect.height,
     };
@@ -108,8 +116,8 @@ function App() {
 
       const top = appBox.top === 0 ? '0px' : `${appBox.top}px`;
       const left = appBox.left === 0 ? '0px' : `${appBox.left}px`;
-      const width = appBox.width === 0 ? '100vw' : `${appBox.width}px`;
-      const height = appBox.height === 0 ? '100vh' : `${appBox.height}px`;
+      const width = appBox.width === 0 ? '100%' : `${appBox.width}px`;
+      const height = appBox.height === 0 ? '100%' : `${appBox.height}px`;
 
       setPageBox(prev => ({
         ...prev,
@@ -155,8 +163,8 @@ function App() {
         ...prev,
         top: '0px',
         left: '0px',
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         rounded: '0px',
         opacity: 1,
       }));
@@ -193,19 +201,36 @@ function App() {
     return () => clearTimeout(pageHide);
   }, [pageBox.open, appBox.top, appBox.left, appBox.width, appBox.height]);
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <div className="w-screen h-screen bg-white overflow-hidden">
-      <div className="flex justify-center items-center h-full">
+      <div className="relative hidden lg:flex justify-center items-center h-full z-0">
         <div className="bg-black w-full h-full shadow-black">
-          <div className="relative w-full h-full overflow-hidden bg-cover bg-center">
+          <div className="relative w-full h-full overflow-hidden">
             <img src='./bg-ipad.jpg' alt='background' className='absolute top-0 left-0 w-full h-full object-cover' />
-            <div className="relative w-full h-full bg-gradient-to-b from-black/20 to-black/50 flex justify-center items-center px-5 sm:px-10 py-2">
-              <div className='flex flex-col w-full lg:w-7xl h-full gap-8'>
-                <Header />
-                <MainContent apps={apps} pageHandler={pageHandler} />
+            <div className='relative w-full h-full flex justify-center items-center px-5 sm:px-10'>
+              <div className="relative bg-gradient-to-b from-black/40 to-black/65 flex justify-center items-center px-5 pb-8 sm:px-10 py-4 border-18 border-black rounded-[20px] overflow-hidden">
+                <div className='flex flex-col w-full max-w-7xl aspect-[5/3] gap-8'>
+                  <Header />
+                  <MainContent apps={apps} pageHandler={pageHandler} />
+                </div>
                 <SubPage pageBox={pageBox} />
+                <Loading className={`${loading ? 'flex' : 'hidden'} absolute top-0 left-0 bg-black w-full h-full justify-center items-center z-10`} />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='lg:hidden fixed top-0 left-0 w-full h-full z-10 bg-[#333333] px-10'>
+        <div className='flex flex-col justify-center items-center h-full text-center'>
+          <p className='text-white text-5xl md:text-7xl'>Oops!</p>
+          <p className='text-white text-2xl md:text-3xl mt-4'>디바이스의 크기가 너무 작아요.</p>
+          <div className='flex flex-col justify-center items-center gap-1 text-white text-sm md:text-base mt-2'>
+            <p>포트폴리오 특성 상 데스크탑에 최적화 되어있습니다.</p>
+            <p>1280px 이상의 크기로 브라우저를 열어주세요.</p>
           </div>
         </div>
       </div>
