@@ -22,3 +22,11 @@ export type AppItem = {
   image: string;
   page: string;
 }
+
+export type MusicItem = {
+  title: string;
+  artist: string;
+  thumbnail: string;
+  url: string;
+  description: string;
+}

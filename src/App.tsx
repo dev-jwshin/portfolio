@@ -7,7 +7,7 @@ import { WeatherWidget } from './pages/home/components/WeatherWidget';
 import { MusicPlayer } from './pages/home/components/MusicPlayer';
 import { PageBox, AppItem } from './pages/home/home.types';
 import Ripples from 'react-ripples';
-import apps from './pages/home/home.datas';
+import { apps } from './pages/home/home.datas';
 
 const AppGrid = ({ 
   apps, 
