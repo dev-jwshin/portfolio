@@ -98,8 +98,6 @@ export const useWeatherData = (latitude: number | null, longitude: number | null
     const baseDate = today.toISOString().slice(0, 10).replace(/-/g, '');
     const baseTime = String(today.getHours()).padStart(2, '0') + '00';
 
-    console.log(latitude, longitude);
-
     try {
       setLoading(true);
       const response = await fetch(

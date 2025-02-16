@@ -53,7 +53,6 @@ export const MusicPlayer = () => {
     audioRef.current = new Audio(currentMusic.url);
     audioRef.current.addEventListener('ended', handleMusicEnd);
 
-    // 새로운 오디오 인스턴스가 생성될 때마다 재생 시도
     if (isPlaying) {
       const playPromise = audioRef.current.play();
       
