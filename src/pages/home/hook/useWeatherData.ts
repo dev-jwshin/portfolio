@@ -103,7 +103,7 @@ export const useWeatherData = (latitude: number | null, longitude: number | null
     try {
       setLoading(true);
       const response = await fetch(
-        `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?` +
+        `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?` +
         `serviceKey=${API_KEY}&` +
         `pageNo=1&` +
         `numOfRows=60&` +
