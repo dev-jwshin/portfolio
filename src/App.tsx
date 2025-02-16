@@ -197,8 +197,9 @@ function App() {
     <div className="w-screen h-screen bg-white overflow-hidden">
       <div className="flex justify-center items-center h-full">
         <div className="bg-black w-full h-full shadow-black">
-          <div className="relative w-full h-full overflow-hidden bg-[url('./bg-ipad.jpg')] bg-cover bg-center">
-            <div className="w-full h-full bg-gradient-to-b from-black/20 to-black/50 flex justify-center items-center px-5 sm:px-10 py-2">
+          <div className="relative w-full h-full overflow-hidden bg-cover bg-center">
+            <img src='./bg-ipad.jpg' alt='background' className='absolute top-0 left-0 w-full h-full object-cover' />
+            <div className="relative w-full h-full bg-gradient-to-b from-black/20 to-black/50 flex justify-center items-center px-5 sm:px-10 py-2">
               <div className='flex flex-col w-full lg:w-7xl h-full gap-8'>
                 <Header />
                 <MainContent apps={apps} pageHandler={pageHandler} />
