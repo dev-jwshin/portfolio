@@ -12,6 +12,8 @@
   user-select: none;
   -webkit-user-drag: none;
   font-family: 'Noto Sans KR', sans-serif;
+  scrollbar-width: none;
+  scrollbar-color: #fff #111;
 }
 
 #root {
