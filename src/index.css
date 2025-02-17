@@ -29,3 +29,14 @@
   color: transparent;
 }
 
+@media (min-width: 2560px) {
+  #tablet-container {
+    scale: 1.5;
+  }
+}
+
+@media (min-width: 3840px) {
+  #tablet-container {
+    scale: 2.5;
+  }
+}
