@@ -17,6 +17,7 @@ export const usePageTransition = () => {
     width: '0px',
     height: '0px',
     opacity: 0,
+    contentOpacity: 0,
     transition: 'none',
     rounded: '0px',
   });

@@ -109,9 +109,14 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
       }}
       className='z-0 flex justify-center items-center pt-14 px-10 pb-6'
     >
-      <Routes>
-        <Route path='/resume' element={<Resume />} />
-      </Routes>
+      <div className='w-full h-full transition-opacity duration-300 ease-in-out' style={{
+        opacity: pageBox.contentOpacity,
+      }}>
+        <Routes>
+            <Route path='/' element={<div className='w-full h-full' />} />
+            <Route path='/resume' element={<Resume />} />
+        </Routes>
+      </div>
     </div>
   );
 };
@@ -199,6 +204,13 @@ function App() {
         rounded: '0px',
         opacity: 1,
       }));
+      
+      setTimeout(() => {
+        setPageBox(prev => ({
+          ...prev,
+          contentOpacity: 1,
+        }));
+      }, 300);
 
       return;
     }
@@ -220,6 +232,7 @@ function App() {
       height: `${height}px`,
       rounded: '50%',
       opacity: 0,
+      contentOpacity: 0,
     }));
 
     const pageHide = setTimeout(() => {
@@ -233,7 +246,7 @@ function App() {
   }, [pageBox.open, appBox.top, appBox.left, appBox.width, appBox.height]);
 
   return (
-    <div id='tablet-container' className="w-screen h-screen bg-white overflow-hidden">
+    <div className="w-screen h-screen bg-white overflow-hidden">
       <div className="relative hidden lg:flex justify-center items-center h-full z-0">
         <div className="bg-black w-full h-full shadow-black">
           <div className="relative w-full h-full overflow-hidden">

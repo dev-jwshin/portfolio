@@ -13,6 +13,7 @@ export type PageBox = {
   width: string;
   height: string;
   opacity: number;
+  contentOpacity: number;
   transition: string;
   rounded: string;
 }
