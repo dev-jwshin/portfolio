@@ -2,7 +2,10 @@
 @plugin "@tailwindcss/aspect-ratio";
 
 @theme {
-  --breakpoint-lg: 1280px;
+  --breakpoint-uhd: 3840px;
+  --breakpoint-qhd: 2560px;
+  --breakpoint-fhd: 1920px;
+  --breakpoint-lg: 1480px;
 }
 
 * {

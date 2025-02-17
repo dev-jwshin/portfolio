@@ -1,5 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { usePageTransition } from './pages/home/hook/usePageTransition';
 import { Header } from './components/Header';
 import { TypewriterHeader } from './pages/home/components/TypeWriteHeader';
@@ -8,6 +8,7 @@ import { MusicPlayer } from './pages/home/components/MusicPlayer';
 import { PageBox, AppItem } from './pages/home/home.types';
 import Ripples from 'react-ripples';
 import { apps } from './pages/home/home.datas';
+import Resume from './pages/resume/Resume';
 
 const AppGrid = ({ 
   apps, 
@@ -54,9 +55,37 @@ const MainContent = ({
   );
 };
 
-const Loading = ({ className }: { className?: string }) => {
+const Loading = () => {
+  const { loading, setLoading } = usePageTransition();
+  const [display, setDisplay] = useState('flex');
+
+
+  useEffect(() => {
+    if (loading === 'on') setDisplay('flex opacity-100');
+    if (loading === 'off') setDisplay('flex opacity-0');
+    if (loading === 'none') setDisplay('hidden');
+  }, [loading]);
+
+  useEffect(() => {
+    const loadingOff = setTimeout(() => {
+      setLoading('off');
+
+      const loadingNone = setTimeout(() => {
+        setLoading('none');
+      }, 300);
+
+      return () => clearTimeout(loadingNone);
+    }, 100);
+    
+    return () => clearTimeout(loadingOff);
+  }, []);
+
   return (
-    <div className={className}>
+    <div className={`
+      absolute top-0 left-0 bg-black w-full h-full justify-center items-center z-10
+      transition-opacity duration-300 ease-in-out
+      ${display}
+    `}>
       <img src='./loading.jpg' alt='loading' className='w-98' />
     </div>
   );
@@ -68,7 +97,7 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
       id='sub-page'
       style={{
         position: 'absolute',
-        backgroundColor: '#222',
+        backgroundColor: '#111',
         top: pageBox.top,
         left: pageBox.left,
         width: pageBox.width,
@@ -78,9 +107,11 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
         borderRadius: pageBox.rounded,
         display: pageBox.show ? 'flex' : 'none',
       }}
-      className='z-0 flex justify-center items-center'
+      className='z-0 flex justify-center items-center pt-14 px-10 pb-6'
     >
-      <div className='flex justify-center items-center lg:w-7xl h-full' />
+      <Routes>
+        <Route path='/resume' element={<Resume />} />
+      </Routes>
     </div>
   );
 };
@@ -89,7 +120,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const path = location.pathname;
-  const { appBox, setAppBox, pageBox, setPageBox, loading, setLoading } = usePageTransition();
+  const { appBox, setAppBox, pageBox, setPageBox } = usePageTransition();
 
   const pageHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
@@ -201,10 +232,6 @@ function App() {
     return () => clearTimeout(pageHide);
   }, [pageBox.open, appBox.top, appBox.left, appBox.width, appBox.height]);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
   return (
     <div className="w-screen h-screen bg-white overflow-hidden">
       <div className="relative hidden lg:flex justify-center items-center h-full z-0">
@@ -218,7 +245,7 @@ function App() {
                   <MainContent apps={apps} pageHandler={pageHandler} />
                 </div>
                 <SubPage pageBox={pageBox} />
-                <Loading className={`${loading ? 'flex' : 'hidden'} absolute top-0 left-0 bg-black w-full h-full justify-center items-center z-10`} />
+                <Loading />
               </div>
             </div>
           </div>
@@ -230,7 +257,7 @@ function App() {
           <p className='text-white text-2xl md:text-3xl mt-4'>디바이스의 크기가 너무 작아요.</p>
           <div className='flex flex-col justify-center items-center gap-1 text-white text-sm md:text-base mt-2'>
             <p>포트폴리오 특성 상 데스크탑에 최적화 되어있습니다.</p>
-            <p>1280px 이상의 크기로 브라우저를 열어주세요.</p>
+            <p>1480px 이상의 크기로 브라우저를 열어주세요.</p>
           </div>
         </div>
       </div>
