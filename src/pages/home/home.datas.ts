@@ -22,6 +22,11 @@ export const apps = [
     page: 'resume',
   },
   {
+    name: '경력',
+    image: './app/work-history.webp',
+    page: 'work-history',
+  },
+  {
     name: '자기소개',
     image: './app/introduction.webp',
     page: 'introduction',
