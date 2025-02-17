@@ -240,7 +240,7 @@ function App() {
             <img src='./bg-ipad.jpg' alt='background' className='absolute top-0 left-0 w-full h-full object-cover' />
             <div className='relative w-full h-full flex justify-center items-center px-5 sm:px-10'>
               <div className="relative bg-gradient-to-b from-black/40 to-black/65 flex justify-center items-center px-5 pb-8 sm:px-10 py-4 border-18 border-black rounded-[20px] overflow-hidden">
-                <div className='flex flex-col w-full max-w-7xl aspect-[5/3] gap-8'>
+                <div className='flex flex-col w-full max-w-7xl aspect-[5.5/3] gap-8'>
                   <Header />
                   <MainContent apps={apps} pageHandler={pageHandler} />
                 </div>
