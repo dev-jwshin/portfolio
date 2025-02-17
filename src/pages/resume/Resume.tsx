@@ -12,7 +12,7 @@ function Resume() {
       </div>
       <div className="relative flex pt-5 z-10 h-[400px]">
         <div className="flex flex-col gap-2 min-w-[200px] pt-5">
-          <p className="text-base font-thin">웹/앱 풀스택 개발자</p>
+          <p className="text-base font-thin">9년차 웹/앱 풀스택 개발자</p>
           <div className="absolute -bottom-10 -left-20 w-4/8 h-68 bg-white flex justify-start items-center z-0 pl-20">
             <div className="flex flex-col gap-2 text-[#333] py-10 tracking-tighter leading-snug">
               <p><span className="font-bold">주소</span>: 서울특별시 관악구 신림동1길 20-6</p>
@@ -42,7 +42,7 @@ function Resume() {
               이후 실무에 가까운 공부를 위해 쇼핑몰 업체들이 모인 카페에서 쇼핑몰을 유지보수 요청을 받아 무료로 진행하였습니다.
             </p>
             <p className="text-base pt-2">
-              독학으로 습득하기 어려운 실무자들의 노하우는 아르바이트를 하여 비용을 마련하여 오프라인 강의를 듣고 습득하고자 노력하였습니다.
+              독학으로 습득하기 어려운 실무자들의 노하우는 아르바이트를 하여 비용을 마련해서 오프라인 강의를 듣고 습득하였습니다.
             </p>
           </div>
         </div>
