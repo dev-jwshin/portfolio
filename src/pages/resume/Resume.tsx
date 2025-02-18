@@ -48,7 +48,7 @@ function Resume() {
         </div>
       </div>
       <div className="absolute bottom-0 right-0 w-[650px] h-[120px] bg-white flex justify-center items-center z-0">
-        <p className="text-4xl font-bold text-[#333]">FOR YOUR BUSINESS</p>
+        <p className="text-2xl font-bold text-[#333]">1998년생 | INTJ | 군필 | 사회복무요원(척추)</p>
       </div>
     </div>
   );
