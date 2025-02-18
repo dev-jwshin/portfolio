@@ -9,7 +9,7 @@ import {
   SpeakerXMarkIcon,
   SpeakerWaveIcon
 } from '@heroicons/react/24/outline';
-import { musics } from '../home.datas';
+import { musics } from '../home.data';
 
 export const MusicPlayer = ({ className }: { className?: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
