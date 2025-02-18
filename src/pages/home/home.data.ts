@@ -6,11 +6,6 @@ import { MusicItem } from "./home.types";
 //   page: 'introduction',
 // },
 // {
-//   name: '스킬',
-//   image: './app/skill.webp',
-//   page: 'skill',
-// },
-// {
 //   name: '프로젝트',
 //   image: './app/project.webp',
 //   page: 'project',
@@ -26,6 +21,11 @@ export const apps = [
     name: '경력',
     image: './app/work-history.webp',
     page: 'work-history',
+  },
+  {
+    name: '스킬',
+    image: './app/skill.webp',
+    page: 'skill',
   },
 ];
 

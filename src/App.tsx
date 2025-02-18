@@ -10,6 +10,7 @@ import Ripples from 'react-ripples';
 import { apps } from './pages/home/home.data';
 import Resume from './pages/resume/Resume';
 import WorkHistory from './pages/workHistory/WorkHistory';
+import Skill from './pages/skill/Skill';
 
 const AppGrid = ({ 
   apps, 
@@ -117,6 +118,7 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
             <Route path='/' element={<div className='w-full h-full' />} />
             <Route path='/resume' element={<Resume />} />
             <Route path='/work-history' element={<WorkHistory />} />
+            <Route path='/skill' element={<Skill />} />
         </Routes>
       </div>
     </div>
