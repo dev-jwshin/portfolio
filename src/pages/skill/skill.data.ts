@@ -125,19 +125,19 @@ const skills: SkillType = {
       icon: SiMysql,
       level: 100,
       name: "MySQL",
-      tags: ["Mysql", "MariaDB"],
+      tags: ["Mysql", "MariaDB", "ORM"],
     },
     {
       icon: SiPostgresql,
       level: 100,
       name: "PostgreSQL",
-      tags: ["Postgresql"],
+      tags: ["Postgresql", "ORM"],
     },    
     {
       icon: SiMongodb,
       level: 95,
       name: "MongoDB",
-      tags: ["Mongodb"],
+      tags: ["Mongodb", "ORM"],
     },
     {
       icon: SiRedis,
