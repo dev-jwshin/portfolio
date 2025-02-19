@@ -31,7 +31,20 @@ const projects: Project[] = [
   },
   {
     image: "./project/aucshow.png",
-    title: "옥쇼 - Aucshow",
+    title: "옥쇼 1.0 - Aucshow 1.0",
+    category: "옥외광고 플랫폼 | 풀스택",
+    description: [
+      "옥외광고를 전문적으로 취급하는 플랫폼 입니다.",
+      "PHP 기반으로 개발되었으며, 기존 외주사의 코드가 스파게티 코드로 만들어져 있고 속도가 느리다는 문제로 인해 2.0으로 리뉴얼 개발 하였습니다.",
+      "풀스택으로 참여하였으며 시작부터 완료까지 모든 부분을 관리 / 작업하였습니다.",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "Mysql", "Cafe24", "1인 개발"],
+    hash: "aucshow",
+    reason: "2.0으로 넘어가면서 더 이상 사용되지 않습니다.",
+  },
+  {
+    image: "./project/aucshow.png",
+    title: "옥쇼 2.0 - Aucshow 2.0",
     category: "옥외광고 플랫폼 | 풀스택",
     description: [
       "옥외광고를 전문적으로 취급하는 플랫폼 입니다.",
