@@ -92,7 +92,7 @@ function WorkHistory() {
               <p className="text-sm">2017. 04 - 2023. 09</p>
               <div className="flex flex-col">
                 <p className="text-lg">메이트(Mate)</p>
-                <p className="text-sm">프리랜서 → 정규직 → 프리랜서</p>
+                <p className="text-sm">프리랜서 → 공동사업 → 프리랜서</p>
               </div>
               <div className="flex flex-col gap-1 text-sm pt-2">
                 <p>프리랜서로 시작하게된 회사입니다.</p>
@@ -145,7 +145,7 @@ function WorkHistory() {
               <p className="text-sm">2024. 12</p>
               <div className="flex flex-col">
                 <p className="text-lg">마이티켓플렉스</p>
-                <p className="text-sm">프리랜서 / 파트타임</p>
+                <p className="text-sm">프리랜서</p>
               </div>
               <div className="flex flex-col gap-1 text-sm pt-2">
                 <p>허리 재활 중 일을 하고 싶어 프리랜서로서 시작한 회사입니다.</p>
