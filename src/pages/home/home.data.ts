@@ -1,31 +1,33 @@
 import { MusicItem } from "./home.types";
-
-// {
-//   name: '자기소개',
-//   image: './app/introduction.webp',
-//   page: 'introduction',
-// },
-// {
-//   name: '프로젝트',
-//   image: './app/project.webp',
-//   page: 'project',
-// },
+import Resume from "../../pages/resume/Resume";
+import WorkHistory from "../workHistory/WorkHistory";
+import Skill from "../skill/Skill";
+import Project from "../project/Project";
 
 export const apps = [
   {
-    name: '인적사항',
+    name: '이력서',
     image: './app/resume.webp',
     page: 'resume',
+    component: Resume,
   },
   {
     name: '경력',
     image: './app/work-history.webp',
-    page: 'work-history',
+    page: 'works',
+    component: WorkHistory,
   },
   {
     name: '스킬',
     image: './app/skill.webp',
-    page: 'skill',
+    page: 'skills',
+    component: Skill,
+  },
+  {
+    name: '프로젝트',
+    image: './app/project.webp',
+    page: 'projects',
+    component: Project,
   },
 ];
 

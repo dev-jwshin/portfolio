@@ -8,9 +8,6 @@ import { MusicPlayer } from './pages/home/components/MusicPlayer';
 import { PageBox, AppItem } from './pages/home/home.types';
 import Ripples from 'react-ripples';
 import { apps } from './pages/home/home.data';
-import Resume from './pages/resume/Resume';
-import WorkHistory from './pages/workHistory/WorkHistory';
-import Skill from './pages/skill/Skill';
 
 const AppGrid = ({ 
   apps, 
@@ -116,9 +113,9 @@ const SubPage = ({ pageBox }: { pageBox: PageBox }) => {
       }}>
         <Routes>
             <Route path='/' element={<div className='w-full h-full' />} />
-            <Route path='/resume' element={<Resume />} />
-            <Route path='/work-history' element={<WorkHistory />} />
-            <Route path='/skill' element={<Skill />} />
+            {apps.map((app, index) => (
+              <Route key={index} path={`/${app.page}`} element={<app.component />} />
+            ))}
         </Routes>
       </div>
     </div>
