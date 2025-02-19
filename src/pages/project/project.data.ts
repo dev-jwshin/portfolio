@@ -13,7 +13,7 @@ const projects: Project[] = [
     ],
     tags: ["React", "Next.js", "Storybook", "Ruby", "Rails", "RSpec", "Python", "Jupyter", "Mysql", "Redis", "OpenAI", "AWS", "EKS"],
     hash: "codle",
-    link: "https://codle.com",
+    link: "https://codle.io",
   },
   {
     image: "./project/aidt.png",
