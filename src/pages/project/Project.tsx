@@ -4,7 +4,10 @@ import './Project.css';
 
 function Project() {
   return (
-    <div className="flex flex-col w-full h-full text-white overflow-y-auto">
+    <div className="flex flex-col gap-7 pt-4 w-full h-full text-white overflow-y-auto">
+      <p className="text-2xl text-center">
+        사업차 진행했던 연구친구 / 이지견적은 아직 업데이트되지 않았습니다.
+      </p>
       <Masonry
         breakpointCols={3}
         className="my-masonry-grid"
