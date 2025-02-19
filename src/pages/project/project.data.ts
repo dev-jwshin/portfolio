@@ -104,7 +104,7 @@ const projects: Project[] = [
     ],
     tags: ["React", "Storybook", "Elixir", "Phoenix", "PostgreSQL", "AWS", "S3", "CloudFront", "App Runner"],
     hash: "myticketflex",
-    reason: "현재 운영사가 사실상 도산 상태로 접속이 불가능 합니다.",
+    reason: "현재 개발 진행 중 입니다.",
   },
   {
     image: "./project/hansamin.png",
