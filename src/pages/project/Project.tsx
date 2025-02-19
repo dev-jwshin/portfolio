@@ -1,4 +1,3 @@
-import { CiCirclePlus } from "react-icons/ci"
 import { projects } from "./project.data";
 import Masonry from 'react-masonry-css';
 import './Project.css';
