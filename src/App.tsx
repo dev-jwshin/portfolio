@@ -247,7 +247,7 @@ function App() {
   }, [pageBox.open, appBox.top, appBox.left, appBox.width, appBox.height]);
 
   return (
-    <div className="w-screen h-screen bg-white overflow-hidden">
+    <div id='tablet-container' className="w-screen h-screen bg-white overflow-hidden">
       <div className="relative hidden lg:flex justify-center items-center h-full z-0">
         <div className="bg-black w-full h-full shadow-black">
           <div className="relative w-full h-full overflow-hidden">
